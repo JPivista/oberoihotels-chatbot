@@ -1,18 +1,25 @@
 "use client"; // Ensure this component runs only on the client
 
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, EffectFade, Navigation } from "swiper/modules";
-
-// Import Swiper styles
-import "swiper/css";
-import "swiper/css/effect-fade";
-import "swiper/css/navigation";
+import Slider from "react-slick";
 import Image from "next/image";
 import Link from "next/link";
 import { ExperienceData } from "@/utils/home-data";
 
+// Import Slick styles
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
 export default function ExperienceSlider() {
-  
+  const settings = {
+    autoplay: true,
+    autoplaySpeed: 2000,
+    arrows: false,
+    dots: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+  };
 
   return (
     <>
@@ -37,26 +44,20 @@ export default function ExperienceSlider() {
         </div>
       </div>
 
-      <Swiper
-        modules={[Autoplay, EffectFade, Navigation]}
-        autoplay={{ delay: 8000 }}
-        effect="slide"
-        navigation
-        className="w-full"
-      >
+      <Slider {...settings} className="w-full">
         {ExperienceData.map((slide, index) => (
-          <SwiperSlide key={index}>
+          <div key={index}>
             <div className="flex mx-auto mt-10 relative justify-center items-center gap-5">
               <Image
                 src={slide.image}
                 width={800}
                 height={800}
-                className="w- md:h-[60vh]"
+                className="w-md:h-[60vh]"
               />
               <div className="">
                 <p className="font-semibold text-2xl py-3">{slide.title}</p>
                 <p className="md:w-[70%]">{slide.description}</p>
-                <div className=" gap-5 justify-end mt-5">
+                <div className="gap-5 justify-end mt-5">
                   <Link href="" className="text-[#6AB8D8] flex gap-3">
                     EXPLORE
                     <Image
@@ -69,9 +70,9 @@ export default function ExperienceSlider() {
                 </div>
               </div>
             </div>
-          </SwiperSlide>
+          </div>
         ))}
-      </Swiper>
+      </Slider>
     </>
   );
 }
