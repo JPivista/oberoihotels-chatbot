@@ -1,10 +1,13 @@
 import React from 'react'
+import Banner from './Banner'
+import Content from './Content'
 
 const index = () => {
     return (
-        <div>
-            Hotels in Shimla
-        </div>
+      <>
+      <Banner />
+      <Content/>
+      </>
     )
 }
 
