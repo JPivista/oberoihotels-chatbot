@@ -1,10 +1,11 @@
 import React from 'react'
+import Navbar from './Navbar'
 
 const index = () => {
     return (
-        <div>
-            Header
-        </div>
+        <>
+            <Navbar />
+        </>
     )
 }
 
