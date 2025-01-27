@@ -1,9 +1,10 @@
 import React from 'react'
+import ExoticVacations from '../../components/ExoticVacations'
 
 const page = () => {
     return (
         <div>
-            exotic-vacations
+            <ExoticVacations />
         </div>
     )
 }
