@@ -1,3 +1,7 @@
+
+
+import Image from 'next/image'
+
 import React from 'react'
 import Link from 'next/link'
 
@@ -29,8 +33,11 @@ const Navbar = () => {
 
                     <div>
                         <Link href="/" className="flex items-center space-x-3 rtl:space-x-reverse md:order-2">
-                            <img src="/hotels-and-resorts.svg" className="h-16" alt="Flowbite Logo" />
+                              <Image width={150} height={150} src="/hotels-and-resorts.svg" className="h-16" alt="Flowbite Logo" />
+                           
                         </Link>
+                        
+                
                     </div>
 
                     <div className="items-center justify-between hidden w-full md:flex md:w-auto md:order-3" id="navbar-search">
