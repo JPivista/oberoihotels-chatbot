@@ -1,4 +1,5 @@
 
+import Image from 'next/image'
 import React from 'react'
 
 const Navbar = () => {
@@ -29,7 +30,7 @@ const Navbar = () => {
 
                     <div>
                         <a href="https://flowbite.com/" className="flex items-center space-x-3 rtl:space-x-reverse md:order-2">
-                            <img src="/hotels-and-resorts.svg" className="h-16" alt="Flowbite Logo" />
+                            <Image width={20} height={20} src="/hotels-and-resorts.svg" className="h-16" alt="Flowbite Logo" />
                         </a>
                     </div>
 

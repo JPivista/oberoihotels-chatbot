@@ -1,6 +1,7 @@
 import React from "react";
 import { roomData } from "../../../utils/data"; // Adjust the path based on your folder structure
 import Link from "next/link";
+import Image from "next/image";
 // import { useRouter } from "next/router";
 
 const Rooms = () => {
@@ -33,7 +34,9 @@ const Rooms = () => {
               className="grid lg:grid-cols-2 gap-10 items-start mb-16"
             >
               {/* Image */}
-              <img
+              <Image
+              width={300}
+              height={300}
                 src={room.imageUrl}
                 alt={room.title}
                 className="rounded-0 shadow-md w-full h-full object-cover"
