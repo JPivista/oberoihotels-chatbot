@@ -1,12 +1,9 @@
-"use client"; // Ensure this component runs only on the client
+"use client";
 
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, EffectFade, Navigation } from "swiper/modules";
-
-// Import Swiper styles
-import "swiper/css";
-import "swiper/css/effect-fade";
-import "swiper/css/navigation";
+import React from "react";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 export default function BannerSlider() {
   const slides = [
@@ -37,27 +34,34 @@ export default function BannerSlider() {
     },
   ];
 
+  const settings = {
+    dots: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 4000,
+    fade: true,
+    arrows: true,
+    
+  };
+
   return (
-    <Swiper
-      modules={[Autoplay, EffectFade, Navigation]}
-      autoplay={{ delay: 8000 }}
-      effect="fade"
-      navigation
-      className="w-full h-[75vh] sm:h-[80vh] lg:h-[70vh]"
-    >
+    <Slider {...settings} className="w-full">
       {slides.map((slide, index) => (
-        <SwiperSlide key={index}>
-          <div
-            className="relative w-full h-full bg-cover bg-center"
-            style={{ backgroundImage: `url(${slide.image})` }}
-          >
-            <div className="absolute bottom-0 md:top-[450px] top-96 text-center w-full bg-gradient-to-t from-black/70 via-black/30 to-transparent px-4 sm:px-16 py-4 text-white">
-              <h2 className="text-xl sm:text-3xl font-bold">{slide.caption}</h2>
-              <p className="text-sm sm:text-lg italic">{slide.subcaption}</p>
-            </div>
+        <div key={index} className="relative w-full h-[75vh] sm:h-[80vh] lg:h-[70vh]">
+          <img
+            src={slide.image}
+            alt={slide.caption}
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute bottom-0 md:top-[450px] top-96 text-center w-full bg-gradient-to-t from-black/70 via-black/30 to-transparent px-4 sm:px-16 py-4 text-white">
+            <h2 className="text-xl sm:text-3xl font-bold">{slide.caption}</h2>
+            <p className="text-sm sm:text-lg italic">{slide.subcaption}</p>
           </div>
-        </SwiperSlide>
+        </div>
       ))}
-    </Swiper>
+    </Slider>
   );
 }
