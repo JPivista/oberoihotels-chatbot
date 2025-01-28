@@ -4,34 +4,28 @@ import React from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import Image from "next/image";
 
 export default function BannerSlider() {
   const slides = [
     {
-      image: "/home/slider-1.webp",
-      caption: "The Oberoi, Marrakech Ranked Number 1 Resort in North Africa & the Middle East",
-      subcaption: "Travel + Leisure World’s Best Awards, 2023",
+      image: "/jaipur/banner-slide-1.jpg",
+      caption: "Best Hotel in the World",
+      subcaption: "Travel + Leisure, World’s Best Awards, 2024",
     },
     {
-      image: "/home/slider-2.webp",
-      caption: "The Oberoi Beach Resort, Al Zorah Ranked Number 1 Hotel in Middle East",
-      subcaption: "Hemispheres Readers’ Choice Awards, United Airlines, 2023",
+      image: "/jaipur/banner-slide-2.webp",
+      caption: "The Oberoi Rajvilas, Jaipur Ranked Number 1 in Top 20 Hotels in India",
+      subcaption: "Conde Nast Traveller, UK, Readers’ Choice Awards, 2024.",
     },
     {
-      image: "/home/slider-3.jpg",
-      caption: "Good Morning. Welcome to Oberoi.",
-      subcaption: "",
-    },
-    {
-      image: "/home/slider-4.webp",
-      caption: "The Oberoi Amarvilas, Agra Featured in The World’s 50 Best Hotels.",
-      subcaption: "The World’s 50 Best Hotels Academy, 2023",
-    },
-    {
-      image: "/home/slider-5.webp",
+      image: "/jaipur/banner-slide-3.webp",
       caption: "Oberoi Hotels & Resorts, Travel + Leisure’s USA Hall of Fame, 2023",
       subcaption: "World’s Best Awards",
+    },
+    {
+      image: "/jaipur/banner-slide-4.webp",
+      caption: "Unforgettable Holidays.",
+      subcaption: "Stay in our luxury resort in Jaipur.",
     },
   ];
 
@@ -52,9 +46,7 @@ export default function BannerSlider() {
     <Slider {...settings} className="w-full">
       {slides.map((slide, index) => (
         <div key={index} className="relative w-full h-[75vh] sm:h-[80vh] lg:h-[70vh]">
-          <Image
-          width={600}
-          height={600}
+          <img
             src={slide.image}
             alt={slide.caption}
             className="w-full h-full object-cover"
