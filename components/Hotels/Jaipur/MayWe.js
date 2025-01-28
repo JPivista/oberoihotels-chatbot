@@ -5,46 +5,40 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Image from "next/image";
 import Link from "next/link";
-import { MayWeOfferData } from "@/utils/home-data";
+import { MayWeData } from "@/utils/jaipur-data";
 
-export default function MayWeOfferSlider() {
+
+export default function MayWeSlider() {
   const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 3,
-    slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 8000,
-    pauseOnHover: true,
-    arrows: false,
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 2,
-        },
-      },
-      {
-        breakpoint: 600,
-        settings: {
-          slidesToShow: 1,
-        },
-      },
-    ],
+    dots: false,
+    infinite: true,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: false, // Set this to false if you don't want arrows
+    prevArrow: (
+      <button className="slick-prev swiper-button-prev">Previous</button>
+    ),
+    nextArrow: <button className="slick-next swiper-button-next">Next</button>,
+    spaceBetween: 10,
   };
 
   return (
     <>
       <div className="container mx-auto mt-10">
         <h2 className="text-3xl">
-          <span className="italic">May</span> we offer a little persuasion?
+          <span className="italic">May</span> we show you to your room?
         </h2>
 
         <div className="flex justify-between items-center mt-2">
-          <p>A few tempting reasons that might allow us to welcome you soon.</p>
+          <p>
+            All our rooms and villas offer garden views and a sense of
+            yesteryear.<br/> Design inspired by Rajasthani traditional architecture
+            blends perfectly with modern conveniences.
+          </p>
           <p className="flex text-[#DA7B25] items-center cursor-pointer">
-            VIEW ALL OFFERS
+            VIEW ALL
             <Image
               src="/home/svgviewer-output.svg"
               alt="Explore Icon"
@@ -55,22 +49,21 @@ export default function MayWeOfferSlider() {
           </p>
         </div>
       </div>
-      <Slider {...settings} className="container mx-auto">
-        {MayWeOfferData.map((slide, index) => (
-          <div key={index} className="container mx-auto mt-10 relative px-4"> {/* Add padding here */}
+      <Slider {...settings} className="w-full container mx-auto">
+        {MayWeData.map((slide, index) => (
+          <div key={index} className="container mx-auto mt-10 relative">
             <Image
-            alt="image"
+            alt="slide image"
               src={slide.image}
               width={800}
               height={800}
-              className="w-full md:h-[40vh]"
+              className="w-full md:h-[60vh]"
             />
             <div className="">
-              <p className="font-thin text-lg">{slide.imagetitle}</p>
-              <p className="font-semibold">{slide.title}</p>
+              <p className="font-semibold">{slide.place}</p>
               <p className="">{slide.caption}</p>
             </div>
-            <div className="flex gap-5 mt-5">
+            <div className="flex gap-5 justify-end">
               <Link href="" className="text-[#6AB8D8] flex gap-3">
                 EXPLORE
                 <Image
