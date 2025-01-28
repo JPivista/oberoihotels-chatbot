@@ -5,7 +5,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Image from "next/image";
 import Link from "next/link";
-import { MayWeOfferData } from "@/utils/home-data";
+import { MayWeOfferData } from "@/utils/jaipur-data";
 
 export default function MayWeOfferSlider() {
   const settings = {
@@ -42,7 +42,7 @@ export default function MayWeOfferSlider() {
         </h2>
 
         <div className="flex justify-between items-center mt-2">
-          <p>A few tempting reasons that might allow us to welcome you soon.</p>
+          <p>A few more good reasons for you to stay with us.</p>
           <p className="flex text-[#DA7B25] items-center cursor-pointer">
             VIEW ALL OFFERS
             <Image
