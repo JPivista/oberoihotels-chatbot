@@ -1,9 +1,10 @@
 import React from 'react'
+import SpecialOffer from '../../components/SpecialOffers/'
 
 const page = () => {
     return (
         <div>
-            special-offers
+            <SpecialOffer />
         </div>
     )
 }

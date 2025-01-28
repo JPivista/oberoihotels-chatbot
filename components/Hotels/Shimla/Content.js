@@ -5,7 +5,7 @@ import Link from "next/link";
 
 const Rooms = () => {
   return (
-    <div className="px-8 py-16 lg:px-24 lg:py-20">
+    <div className="container mx-auto py-10">
       <div className=" ">
         {/* Header */}
         <h1 className="text-5xl font-serif mb-4">
@@ -82,12 +82,11 @@ const Rooms = () => {
                 {/* Link Table without lines */}
                 <div className="flex items-center space-x-8 ">
                   <Link
-                    href={room.exploreLink}
+                     href={`/hotels-in-shimla-cecil/rooms-suites/${room.slug}`}
                     className="text-[#65B6D7] font-medium text-base flex items-center hover:no-underline"
                   >
                     EXPLORE <span className="ml-1 text-[#65B6D7]">›</span>
                   </Link>
-
                   <Link
                     href={room.bookLink}
                     className="text-[#D8741B] font-medium text-base flex items-center hover:no-underline"
@@ -100,6 +99,7 @@ const Rooms = () => {
           ))}
       </div>
     </div>
+    
   );
 };
 

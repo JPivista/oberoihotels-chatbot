@@ -59,6 +59,7 @@ export default function MayWeOfferSlider() {
         {MayWeOfferData.map((slide, index) => (
           <div key={index} className="container mx-auto mt-10 relative px-4"> {/* Add padding here */}
             <Image
+            alt="image"
               src={slide.image}
               width={800}
               height={800}

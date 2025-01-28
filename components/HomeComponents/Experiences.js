@@ -49,6 +49,7 @@ export default function ExperienceSlider() {
           <div key={index}>
             <div className="flex mx-auto mt-10 relative justify-center items-center gap-5">
               <Image
+              alt="image"
                 src={slide.image}
                 width={800}
                 height={800}
