@@ -63,6 +63,7 @@ export default function StoriesSlider() {
         {StoriesData.map((slide, index) => (
           <div key={index} className="container mx-auto mt-10 px-4">
             <Image
+            alt="image"
               src={slide.image}
               width={800}
               height={800}

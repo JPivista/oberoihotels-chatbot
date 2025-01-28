@@ -66,6 +66,7 @@ export default function OberoiByYouSlider() {
           <div key={index} className="relative container mx-auto mt-10 px-1">
             {/* Image */}
             <Image
+            alt="image"
               src={slide.image}
               width={800}
               height={800}

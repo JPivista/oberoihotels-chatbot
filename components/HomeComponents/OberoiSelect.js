@@ -20,7 +20,7 @@ const OberoiSelect = () => {
               Pre-purchase hotel credit and enjoy enhanced benefits at Oberoi
               Hotels & Resorts in India.
             </p>
-            <Image alt="know more" src="/home/know-more-os-button.png" width={200} height={200} className="pt-5"/>
+            <Image alt="know more" src="/home/know-more-os-button.png" width={200} height={200} className="pt-5" />
           </div>
         </div>
       </div>

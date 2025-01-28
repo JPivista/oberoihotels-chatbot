@@ -4,6 +4,7 @@ import React from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import Image from "next/image";
 
 export default function BannerSlider() {
   const slides = [
@@ -51,7 +52,9 @@ export default function BannerSlider() {
     <Slider {...settings} className="w-full">
       {slides.map((slide, index) => (
         <div key={index} className="relative w-full h-[75vh] sm:h-[80vh] lg:h-[70vh]">
-          <img
+          <Image
+          width={600}
+          height={600}
             src={slide.image}
             alt={slide.caption}
             className="w-full h-full object-cover"
