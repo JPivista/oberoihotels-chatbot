@@ -43,7 +43,7 @@ export default function BannerSlider() {
     autoplay: true,
     autoplaySpeed: 4000,
     fade: true,
-    arrows: false,
+    arrows: true,
     
   };
 

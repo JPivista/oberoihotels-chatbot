@@ -15,10 +15,10 @@ export default function HotelSlider() {
     infinite: true,
     slidesToShow: 1,
     slidesToScroll: 1,
-    arrows: false, // Set this to false if you don't want arrows
+    arrows: true, // Set this to false if you don't want arrows
     prevArrow: <button className="slick-prev swiper-button-prev">Previous</button>,
     nextArrow: <button className="slick-next swiper-button-next">Next</button>,
-    spaceBetween: 10,
+    // spaceBetween: 10,
   };
 
   return (
